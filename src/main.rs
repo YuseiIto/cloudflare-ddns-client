@@ -128,7 +128,8 @@ async fn put_record(record_id: &str, record: &Record, config: &Config) -> Result
             Ok(())
         }
         false => Err(anyhow::anyhow!(
-            "Cloudflare API error while updating record"
+            "Cloudflare API error while creating record. Reason:{:?}",
+            res.errors
         )),
     }
 }
