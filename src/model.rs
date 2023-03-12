@@ -1,7 +1,14 @@
 use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Serialize, Deserialize)]
+pub struct Config {
+    pub zone_id: String,
+    pub api_key: String,
+    pub email: String,
+    pub record_name: String,
+}
 
+#[derive(Debug, Serialize, Deserialize)]
 pub struct Record {
     /// A valid IPv4 address.
     pub content: String,
