@@ -42,7 +42,10 @@ async fn main() -> Result<()> {
         content: my_ip.to_string(),
         name: config.record_name.to_string(),
         type_: "A".to_string(),
-        comment: Some(format!("DDNS Last update at {}", chrono::Utc::now())),
+        comment: Some(format!(
+            "DDNS Last Updated at {}",
+            chrono::Utc::now().format("%Y-%m-%d %H:%M:%S %Z")
+        )),
         id: None, // Ignored
     };
 
